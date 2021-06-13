@@ -8,7 +8,7 @@ resource "google_bigquery_dataset" "source_datasets" {
   depends_on = [
     google_project_service.data_project_services,
   ]
-  
+
   access {
     role          = "WRITER"
     user_by_email = google_service_account.airbyte_sa.email
