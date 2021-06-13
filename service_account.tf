@@ -9,7 +9,7 @@ resource "google_service_account" "bq_owner" {
 
 # Airbyte service account
 resource "google_service_account" "airbyte_sa" {
-  account_id   = "${local.project_id}-airbyte"
+  account_id   = "airbyte"
   project      = local.project_id
   display_name = "Airbyte Service Account"
   description  = "Airbyte service account"
@@ -28,7 +28,7 @@ resource "google_service_account_key" "airbyte_sa_key" {
 
 # Metabase service account
 resource "google_service_account" "metabase_sa" {
-  account_id   = "${local.project_id}-metabase"
+  account_id   = "metabase"
   project      = local.project_id
   display_name = "Metabase Service Account"
   description  = "Metabase service account"
@@ -47,7 +47,7 @@ resource "google_service_account_key" "metabase_sa_key" {
 
 # Airflow service account
 resource "google_service_account" "airflow_sa" {
-  account_id   = "${local.project_id}-airflow"
+  account_id   = "airflow"
   project      = local.project_id
   display_name = "Airflow Service Account"
   description  = "Airflow service account"
@@ -63,3 +63,23 @@ resource "google_service_account_key" "airflow_sa_key" {
     google_project.data_project,
   ]
 }
+
+# dbt service account
+resource "google_service_account" "dbt_sa" {
+  account_id   = "dbt-runner"
+  project      = local.project_id
+  display_name = "dbt Service Account"
+  description  = "dbt service account"
+  depends_on = [
+    google_project.data_project,
+  ]
+}
+# dbt service account key
+resource "google_service_account_key" "dbt_sa_key" {
+  service_account_id = google_service_account.dbt_sa.name
+  public_key_type    = "TYPE_X509_PEM_FILE"
+  depends_on = [
+    google_project.data_project,
+  ]
+}
+
