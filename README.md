@@ -5,11 +5,13 @@ Get started with the modern data stack in five minutes using Terraform. Read mor
 This repo is intended for everyone to get started with the modern data stack effortlessly. It is not recommended to run this code in a production environment. 
 ## Architecture
 
-- Ingestion: Airbyte
-- Warehousing: BigQuery
-- Transformation: dbt
-- Orchestration (optional): Airflow
-- BI: Metabase
+![Architecture](images/2021-06-13-22-26-22.png)
+
+- Ingestion: **Airbyte**
+- Warehousing: **BigQuery**
+- Transformation: **dbt**
+- Orchestration (optional): **Airflow**
+- BI & data discovery: **Metabase**
 
 Terraform will create a project on Google Cloud Platform, provision virtual machines for different services, and spin up other necessary resources. 
 
@@ -67,7 +69,7 @@ folder_id  = ""
 org_id     = ""
 ```
 
-**Warning**: These are considered sensitive values. Do not commit this file and the `*.tfstate` file to a public repo. 
+**Warning**: These are considered sensitive values. Do not commit this file and the `*.tfstate` files to a public repo. 
 
 ### Customize the values in `variables.tf`
 
@@ -89,7 +91,7 @@ terraform apply
 
 Study the output in the terminal to make sure that all resource settings are what you want them to be. Type `yes` and hit `enter`.
 
-Terraform will create a Google Cloud project with our modern data stack. The whole process will take about 2-3 minutes. 
+Terraform will create a Google Cloud project with our modern data stack. The whole process will take about 2-3 minutes. It takes an additional 2–3 minutes for the services to be installed on VM instances. The whole process will only take 5 minutes or less.
 
 ## Using the modern data stack
 
