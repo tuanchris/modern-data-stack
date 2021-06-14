@@ -95,7 +95,7 @@ Terraform will create a Google Cloud project with our modern data stack. The who
 
 ## Using the modern data stack
 
-### Retrieve service account for different service
+### Retrieve service accounts for different services
 
 ![sa output](images/2021-06-13-15-02-31.png)
 
