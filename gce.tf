@@ -1,7 +1,7 @@
 resource "google_compute_instance" "airbyte_instance" {
-  name                    = "${local.project_id}-airbyte"
+  name                    = "${var.project_id}-airbyte"
   machine_type            = local.airbyte_machine_type
-  project                 = local.project_id
+  project                 = var.project_id
   metadata_startup_script = file("./sh_scripts/airbyte.sh")
 
   depends_on = [
@@ -24,9 +24,9 @@ resource "google_compute_instance" "airbyte_instance" {
 }
 
 resource "google_compute_instance" "metabase_instance" {
-  name                    = "${local.project_id}-metabase"
+  name                    = "${var.project_id}-metabase"
   machine_type            = local.metabase_machine_type
-  project                 = local.project_id
+  project                 = var.project_id
   metadata_startup_script = file("./sh_scripts/metabase.sh")
 
   depends_on = [
@@ -49,9 +49,9 @@ resource "google_compute_instance" "metabase_instance" {
 }
 
 resource "google_compute_instance" "airflow_instance" {
-  name                    = "${local.project_id}-airflow"
+  name                    = "${var.project_id}-airflow"
   machine_type            = local.airflow_machine_type
-  project                 = local.project_id
+  project                 = var.project_id
   metadata_startup_script = file("./sh_scripts/airflow.sh")
 
   depends_on = [

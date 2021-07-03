@@ -1,5 +1,4 @@
 locals {
-  project_id            = "tf-airbyte-demo"
   region                = "asia-southeast1"
   zone                  = "asia-southeast1-a"
   airbyte_machine_type  = "e2-small"
@@ -10,6 +9,10 @@ locals {
     # dataset_naem = "Dataset descriptions"
     postgres_crm = "Raw data of our company from a Postgres database"
   }
+}
+
+variable "project_id" {
+  type = string
 }
 
 variable "billing_id" {

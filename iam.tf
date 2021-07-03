@@ -1,5 +1,5 @@
 resource "google_project_iam_binding" "sa_iam_bindings" {
-  project = local.project_id
+  project = var.project_id
   role    = "roles/bigquery.admin"
 
   members = [
