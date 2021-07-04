@@ -6,7 +6,7 @@ locals {
   airflow_machine_type  = "e2-medium"
   source_datasets = {
     # To add additional dataset, add values below in the format
-    # dataset_naem = "Dataset descriptions"
+    # dataset_name = "Dataset descriptions"
     postgres_crm = "Raw data of our company from a Postgres database"
   }
 }
