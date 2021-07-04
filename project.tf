@@ -4,5 +4,5 @@ resource "google_project" "data_project" {
   org_id          = var.org_id
   name            = var.project_id
   project_id      = var.project_id
-  skip_delete     = true
+  skip_delete     = false
 }
