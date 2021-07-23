@@ -1,6 +1,6 @@
 # Modern Data Stack
 
-Get started with the modern data stack in five minutes using Terraform. Read more about this repo in my blog post here.
+Get started with the modern data stack in five minutes using Terraform. Read more about this repo in my blog post [here](https://towardsdatascience.com/bootstrap-a-modern-data-stack-in-5-minutes-with-terraform-32342ee10e79).
 
 This repo is intended for everyone to get started with the modern data stack effortlessly. It is not recommended to run this code in a production environment. 
 ## Architecture
