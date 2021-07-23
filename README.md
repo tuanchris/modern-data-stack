@@ -67,13 +67,15 @@ folder_id  = ""
 # The organization ID of where you want your project to be under
 # Leave this blank if you use a personal account
 org_id     = ""
+# The project to create
+project_id = ""
 ```
 
 **Warning**: These are considered sensitive values. Do not commit this file and the `*.tfstate` files to a public repo. 
 
 ### Customize the values in `variables.tf`
 
-The variables in `variables.tf` will be used for the configurations of the resources. At the very least, change the value for `project_id` to a globally unique value of your choosing. 
+The variables in `variables.tf` will be used for the configurations of the resources.
 
 You can customize the machine type for different services by changing the variables. If you don't want to use any service, comment it out in the `gce.tf` file. 
 
